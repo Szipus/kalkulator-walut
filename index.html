@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Waluty - Mateusz Jarmużek 2EGM </title>
+        <link rel="shortcut icon" href="adrespliku.roz">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+
+<script type="text/javascript">
+function przeliczaj() {
+    var krok1;
+    var krok2;
+        var pln = 1.00;
+        var eur = 4.48;
+        var usd = 3.64;
+        var gbp = 5.19;
+        var aud = 2.84;
+
+        switch (przelicznik.co.value)
+        {
+            case "PLN":
+                krok1 = przelicznik.ile.value*pln;
+                break;
+            case "EUR":
+                krok1 = przelicznik.ile.value*eur;
+                break;
+            case "USD":
+                krok1 = przelicznik.ile.value*usd;
+                break;
+            case "GBP":
+                krok1 = przelicznik.ile.value*gbp;
+                break;
+            case "AUD":
+                krok1 = przelicznik.ile.value*aud;
+                break;
+            
+            default:
+                krok1 = "coś nie pykło";
+        }
+        
+        switch (przelicznik.naCo.value)
+        {
+            case "PLN":
+                krok2 = krok1/pln;
+                break;
+            case "EUR":
+                krok2 = krok1/eur;
+                break;
+            case "USD":
+                krok2 = krok1/usd;
+                break;
+            case "GBP":
+                krok2 = krok1/gbp;
+                break;
+            case "AUD":
+                krok2 = krok1/aud;
+                break;                
+            default:
+                krok2 = "coś nie pykło";
+        }
+        
+    przelicznik.wynik.value = krok2;
+}
+</script>
+
+ <form action="" name="przelicznik">
+  Co chcesz przeliczyć:
+  <input type="text" name="ile" size="20" />
+   <select name="co">
+    <option name="PLN" value="PLN">PLN</option>
+    <option name="EUR" value="EUR">EUR</option>
+    <option name="USD" value="USD">USD</option>
+    <option name="GBP" value="GBP">GBP</option>
+    <option name="AUD" value="AUD">AUD</option>
+  
+ </select><br /><br />
+  
+  Na co chcesz przeliczyć:
+  <input type="text" name="wynik" size="20" disabled="disabled" />
+   <select name="naCo">
+    <option name="PLN" value="PLN">PLN</option>
+    <option name="EUR" value="EUR">EUR</option>
+    <option name="USD" value="USD">USD</option>
+    <option name="GBP" value="GBP">GBP</option>
+    <option name="AUD" value="AUD">AUD</option>   
+  </select><br /><br />
+  
+<input type="button" value="Przelicz jednostki" onClick="przeliczaj()" />
+</form>
+</body>
+</html>
